@@ -126,6 +126,7 @@ class _AuthFormState extends State<AuthForm>
                   children: [
                     if (_authMode == AuthMode.SignUp) UserImagePicker(_imageFn),
                     TextFormField(
+                      enabled: widget.isLoading ? false : true,
                       decoration: InputDecoration(labelText: 'Email address'),
                       autocorrect: false,
                       textCapitalization: TextCapitalization.none,
@@ -152,6 +153,7 @@ class _AuthFormState extends State<AuthForm>
                         child: SlideTransition(
                           position: _slideAnimation,
                           child: TextFormField(
+                            enabled: widget.isLoading ? false : true,
                             decoration: InputDecoration(labelText: 'Username'),
                             autocorrect: true,
                             textCapitalization: TextCapitalization.words,
@@ -164,6 +166,7 @@ class _AuthFormState extends State<AuthForm>
                       ),
                     ),
                     TextFormField(
+                      enabled: widget.isLoading ? false : true,
                       decoration: InputDecoration(
                         labelText: 'Password',
                         hintText: 'Enter your password',
